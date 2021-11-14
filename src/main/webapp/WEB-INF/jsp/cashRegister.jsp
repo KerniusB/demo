@@ -9,12 +9,12 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${vartotojai}" var="vartotojas">
+        <c:forEach items="${cashRegisters}" var="cashRegister">
             <tr>
-                <td>${vartotojas.id}</td>
-                <td>${vartotojas.name}</td>
-                <td><a type="button" href="/update-vartotojas/${vartotojas.id}">UPDATE</a></td>
-                <td><a type="button" href="/delete-vartotojas/${vartotojas.id}">DELETE</a></td>
+                <td>${cashRegister.id}</td>
+                <td>${cashRegister.name}</td>
+                <td><a type="button" href="/update-cashRegister/${cashRegister.id}">UPDATE</a></td>
+                <td><a type="button" href="/delete-cashRegister/${cashRegister.id}">DELETE</a></td>
             </tr>
         </c:forEach>
 

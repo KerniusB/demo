@@ -2,13 +2,13 @@
 <%@ include file="common/navigation.jspf" %>
 
 <div class="container">
-    <form:form method="post" modelAttribute="vartotojas">
-        <c:if test="${vartotojas.id == null}">
+    <form:form method="post" modelAttribute="cashRegister">
+        <c:if test="${cashRegister.id == null}">
             <p>Add new user:</p>
         </c:if>
         <div>
-            <c:if test="${vartotojas.id != null}">
-                <p>Update user with id: ${vartotojas.id}:</p>
+            <c:if test="${cashRegister.id != null}">
+                <p>Update user with id: ${cashRegister.id}:</p>
             </c:if>
             <form:input path="id" type="hidden" required="required"/>
             <form:errors path="id"/>
