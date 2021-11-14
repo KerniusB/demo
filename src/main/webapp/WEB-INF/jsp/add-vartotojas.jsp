@@ -18,31 +18,6 @@
             <form:input path="name" type="text" required="required"/>
             <form:errors path="name"/>
         </div>
-        <div>
-            <form:label path="lastName">Last name</form:label>
-            <form:input path="lastName" type="text" required="required"/>
-            <form:errors path="lastName"/>
-        </div>
-        <div>
-            <form:label path="telNr">Phone number</form:label>
-            <form:input path="telNr" type="text" required="required"/>
-            <form:errors path="telNr"/>
-        </div>
-        <div>
-            <form:label path="email">Email</form:label>
-            <form:input path="email" type="text" required="required"/>
-            <form:errors path="email"/>
-        </div>
-        <div>
-            <form:label path="address">Address</form:label>
-            <form:input path="address" type="text" required="required"/>
-            <form:errors path="address"/>
-        </div>
-        <div>
-            <form:label path="password">Password</form:label>
-            <form:input path="password" type="password" required="required"/>
-            <form:errors path="password"/>
-        </div>
         <button type="submit">OK</button>
     </form:form>
     <c:if test="${errorMessage != null}">

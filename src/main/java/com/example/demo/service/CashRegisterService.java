@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.model.User;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.model.CashRegister;
+import com.example.demo.repository.CashRegisterRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,33 +9,33 @@ import java.util.List;
 @Service
 public class CashRegisterService {
 
-    private final UserRepository userRepository;
+    private final CashRegisterRepository cashRegisterRepository;
 
-    public CashRegisterService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public CashRegisterService(CashRegisterRepository cashRegisterRepository) {
+        this.cashRegisterRepository = cashRegisterRepository;
     }
 
 
-    public User add(User user) {
-        return userRepository.save(user);
+    public CashRegister add(CashRegister cashRegister) {
+        return cashRegisterRepository.save(cashRegister);
     }
 
 
-    public User update(User user) {
-        return userRepository.save(user);
+    public CashRegister update(CashRegister cashRegister) {
+        return cashRegisterRepository.save(cashRegister);
     }
 
     public void deleteById(Long id) {
-        userRepository.deleteById(id);
+        cashRegisterRepository.deleteById(id);
     }
 
-    public List<User> findAll() {
-        return userRepository.findAll();
+    public List<CashRegister> findAll() {
+        return cashRegisterRepository.findAll();
     }
 
 
-    public User findById(Long id) {
-        return userRepository.findById(id).orElse(null);
+    public CashRegister findById(Long id) {
+        return cashRegisterRepository.findById(id).orElse(null);
     }
 
 }

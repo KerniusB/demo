@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.example.demo.restController;
 
-import com.example.demo.model.User;
+import com.example.demo.model.CashRegister;
 import com.example.demo.service.CashRegisterService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,22 +10,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cashRegister")
-public class CashRegisterResource {
+public class CashRegisterRestController {
     private final CashRegisterService cashRegisterService;
 
-    public CashRegisterResource(CashRegisterService cashRegisterService) {
+    public CashRegisterRestController(CashRegisterService cashRegisterService) {
         this.cashRegisterService = cashRegisterService;
     }
 
     @PostMapping("/add")
-    public ResponseEntity<User> addCashRegister(@RequestBody User user) {
-        User newUser = cashRegisterService.add(user);
+    public ResponseEntity<CashRegister> addCashRegister(@RequestBody CashRegister user) {
+        CashRegister newUser = cashRegisterService.add(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<User> updateCashRegister(@RequestBody User user) {
-        User updateAction = cashRegisterService.update(user);
+    public ResponseEntity<CashRegister> updateCashRegister(@RequestBody CashRegister user) {
+        CashRegister updateAction = cashRegisterService.update(user);
         return new ResponseEntity<>(updateAction, HttpStatus.OK);
     }
 
@@ -36,8 +36,8 @@ public class CashRegisterResource {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<User>> getAllCashRegister () {
-        List<User> user = cashRegisterService.findAll();
+    public ResponseEntity<List<CashRegister>> getAllCashRegister () {
+        List<CashRegister> user = cashRegisterService.findAll();
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
