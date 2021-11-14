@@ -2,5 +2,7 @@
 	<div class="navbar-collapse">
 			<a href="/add-cashRegister">Add user</a>
 			<a href="/cashRegister">Users</a>
+			<a href="/add-action">Add user</a>
+            <a href="/action">Users</a>
 	</div>
 </nav>
