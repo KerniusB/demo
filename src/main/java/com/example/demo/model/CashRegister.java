@@ -2,10 +2,7 @@ package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -15,6 +12,8 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 @Getter
 @Setter
 
@@ -32,10 +31,4 @@ public class CashRegister implements Serializable {
     @OneToMany(mappedBy = "cashRegister", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Action> actions;
-
-    public CashRegister(long id, String shopName) {
-        this.id = id;
-        this.name = shopName;
-        this.actions = actions;
-    }
 }

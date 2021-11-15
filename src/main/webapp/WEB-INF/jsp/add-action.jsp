@@ -3,11 +3,11 @@
 
 <div class="container">
     <form:form method="post" modelAttribute="action">
-            <c:if test="${action.id == null}">
+            <c:if test="${action.id == 0}">
                 <p>Add new user:</p>
             </c:if>
             <div>
-                <c:if test="${action.id != null}">
+                <c:if test="${action.id != 0}">
                     <p>Update user with id: ${action.id}:</p>
                 </c:if>
                 <form:input path="id" type="hidden" required="required"/>

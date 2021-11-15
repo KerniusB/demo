@@ -7,7 +7,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@ToString
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -30,11 +30,5 @@ public class Action implements Serializable {
     @JoinColumn(name = "cashRegisterId")
     private CashRegister cashRegister;
 
-    public Action(long id, long inOut, String date, long amount) {
-        this.id = id;
-        this.inOut = inOut;
-        this.date = date;
-        this.amount = amount;
-        this.cashRegister = cashRegister;
-    }
+
 }
