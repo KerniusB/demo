@@ -82,6 +82,27 @@ class ActionControllerTest {
 
     @Test
     void add() throws Exception {
+        Action action = Action.builder()
+                .inOut(100)
+                .date("2020-01-01")
+                .amount(123)
+                .build();
+        when(actionService.add(Mockito.any(Action.class))).thenReturn(action);
+
+        RequestBuilder rb = MockMvcRequestBuilders
+                .post("/add-action")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("inOut", "100")
+                .param("date", "2020-01-01")
+                .param("amount", "123")
+                .flashAttr("action", action);
+
+        mockMvc.perform(rb)
+                .andExpect(MockMvcResultMatchers.status().isFound())
+                .andExpect(MockMvcResultMatchers.redirectedUrl("/action"))
+                .andReturn();
+
+        verify(actionService).add(Mockito.any(Action.class));
     }
 
     @Test
