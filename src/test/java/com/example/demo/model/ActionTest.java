@@ -17,4 +17,11 @@ class ActionTest {
                 () -> assertEquals("2020-01-01", action.getDate()),
                 () -> assertEquals(123, action.getAmount()));
     }
+
+    @Test
+    void getSetDate() {
+        Action action = new Action();
+        action.setDate("2021-01-01");
+        assertEquals("2021-01-01", action.getDate());
+    }
 }

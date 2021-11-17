@@ -22,8 +22,6 @@ class ActionRepositoryTest {
     ActionRepository actionRepository;
     @Autowired
     CashRegisterRepository cashRegisterRepository;
-    @Autowired
-    private TestEntityManager testEntityManager;
 
     @Test
     public void testSave() {

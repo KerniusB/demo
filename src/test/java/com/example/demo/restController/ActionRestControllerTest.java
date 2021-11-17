@@ -113,8 +113,4 @@ class ActionRestControllerTest {
         String actual2 = restTemplate.getForObject("http://localhost:" + port + "/action/delete/1", String.class);
         assertTrue(actual2.contains("/action/delete/1"));
     }
-
-    @Test
-    void getAllCashRegister() {
-    }
 }

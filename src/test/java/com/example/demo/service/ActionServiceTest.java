@@ -42,23 +42,6 @@ class ActionServiceTest {
     }
 
     @Test
-    void update() {
-        Action action = Action.builder()
-                .inOut(100)
-                .date("2020-01-01")
-                .amount(123)
-                .build();
-        actionService.update(action);
-        verify(actionRepository).save(Mockito.any(Action.class));
-    }
-
-    @Test
-    void deleteById() {
-        actionService.deleteById(1L);
-        verify(actionRepository).deleteById(Mockito.anyLong());
-    }
-
-    @Test
     void findAll() {
         Action action = new Action();
         List<Action> actions = new ArrayList<>();
@@ -80,5 +63,22 @@ class ActionServiceTest {
         Action found = actionService.findById(1L);
         verify(actionRepository).findById(Mockito.anyLong());
         assertNotNull(found);
+    }
+
+    @Test
+    void update() {
+        Action action = Action.builder()
+                .inOut(100)
+                .date("2020-01-01")
+                .amount(123)
+                .build();
+        actionService.update(action);
+        verify(actionRepository).save(Mockito.any(Action.class));
+    }
+
+    @Test
+    void deleteById() {
+        actionService.deleteById(1L);
+        verify(actionRepository).deleteById(Mockito.anyLong());
     }
 }
