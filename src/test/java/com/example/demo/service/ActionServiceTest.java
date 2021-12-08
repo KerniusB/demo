@@ -59,6 +59,7 @@ class ActionServiceTest {
                 .date("2020-01-01")
                 .amount(123)
                 .build();
+        //should pass
         when(actionRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(action)); // static method when daromas tada, kai metodas returnina reiksme
         Action found = actionService.findById(1L);
         verify(actionRepository).findById(Mockito.anyLong());

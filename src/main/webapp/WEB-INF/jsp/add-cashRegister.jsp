@@ -8,7 +8,7 @@
         </c:if>
         <div>
             <c:if test="${cashRegister.id != null}">
-                <p>Update user with id: ${cashRegister.id}:</p>
+                <p>Shop info:</p>
             </c:if>
             <form:input path="id" type="hidden" required="required"/>
             <form:errors path="id"/>
